@@ -42,7 +42,7 @@ export default function Projects() {
 
     {/* 🟢 LIVE BADGE */}
     <div className="proj-live">
-      <span className="live-dot"></span> LIVE
+      <span className="live-dot"></span><a href="https://goalledger.vercel.app/" target="_blank" rel="noopener noreferrer">LIVE</a>
     </div>
 
     {/* 📸 IMAGE (replace later) */}

@@ -68,9 +68,10 @@ export default function Navbar() {
   <li><a href="#education" onClick={() => setOpen(false)}>Education</a></li>
 </ul>
 <a
-    href="#contact"
-    className={active === "contact" ? "btn-mag btn-p active" : "btn-mag btn-p"}
-  >
+  href="/PrabhuSinghResume.pdf"          // ✅ path from public folder
+  download="Prabhu_CV.pdf" // ✅ custom download name
+  className={active === "contact" ? "btn-mag btn-p active" : "btn-mag btn-p"}
+>
    Download CV
   </a>
     </nav>
