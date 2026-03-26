@@ -1,141 +1,90 @@
-import { useEffect } from "react";
 import "./Projects.css";
 
 export default function Projects() {
-
-  // 3D Tilt Effect
-  useEffect(() => {
-    const cards = document.querySelectorAll(".proj-card");
-
-    cards.forEach((card) => {
-      card.addEventListener("mousemove", (e) => {
-        const rect = card.getBoundingClientRect();
-        const x = (e.clientX - rect.left) / rect.width - 0.5;
-        const y = (e.clientY - rect.top) / rect.height - 0.5;
-
-        card.style.transform = `
-          perspective(1000px)
-          rotateY(${x * 10}deg)
-          rotateX(${-y * 8}deg)
-          translateY(-8px)
-        `;
-      });
-
-      card.addEventListener("mouseleave", () => {
-        card.style.transform = "";
-      });
-    });
-  }, []);
+  const projects = [
+    {
+      title: "Goal Ledger – A Daily Goal Tracker Web Application",
+      date: "Feb ’25 – Present",
+      live: "https://goalledger.vercel.app/",
+      github: "https://github.com/prabhusinghh/my-goal-tracker",
+      img: "/goal.png", // 🔥 put image in public/images
+      points: [
+        "Designed modular REST architecture with structured route separation and middleware validation.",
+        "Structured modular routes and models for maintainability and scalability.",
+        "Integrated token-based authentication to prevent unauthorized access.",
+        "Deployed via Vercel with responsive mobile-first PWA design.",
+        "Tech: HTML, JavaScript, Tailwind CSS, React.js, Firebase"
+      ]
+    },
+    {
+      title: "FitCoach AI – AI-Powered Fitness Tracking & Coaching Platform",
+      date: "Mar ’26 – Present",
+      live: "http://fitcoach-ai-bot.vercel.app/",
+      github: "https://github.com/prabhusinghh/fitcoach-ai",
+      img: "/fitcoach.png", // 🔥 add image
+      points: [
+        "Architected full-stack fitness system with user-specific data isolation.",
+        "Built AI coaching assistant using LLM APIs for contextual responses.",
+        "Engineered authenticated APIs with JWT-based access control.",
+        "Resolved runtime crashes from null/undefined data using defensive rendering.",
+        "Tech: Next.js, React, Supabase, Groq API, REST APIs, Vercel"
+      ]
+    }
+  ];
 
   return (
     <section id="projects">
       <div className="swrap">
-        <h2 className="proj-title reveal">
-          Featured <span>Projects</span>
+
+        <h2 className="proj-title">
+          Projects
         </h2>
 
-        <div className="proj-grid">
+        <div className="proj-list">
+          {projects.map((proj, i) => (
+            <div className="proj-item" key={i}>
 
-          {/* CARD 1 */}
-          <div className="proj-card reveal">
-  <div className="proj-banner pb1">
+              {/* LEFT IMAGE */}
+              <div className="proj-img">
+                <img src={proj.img} alt={proj.title} />
+              </div>
 
-    {/* 🟢 LIVE BADGE */}
-    <div className="proj-live">
-      <span className="live-dot"></span><a href="https://goalledger.vercel.app/" target="_blank" rel="noopener noreferrer">LIVE</a>
-    </div>
+              {/* RIGHT CONTENT */}
+              <div className="proj-content">
 
-    {/* 📸 IMAGE (replace later) */}
-    <img src="/images/goal-ledger.png" alt="Goal Ledger" />
-  </div>
+                <div className="proj-header">
+                  <h3>
+                    {proj.title}{" "}
+                    {proj.live !== "#" && (
+                      <a href={proj.live} target="_blank" rel="noreferrer">
+                        | Live
+                      </a>
+                    )}
+                  </h3>
 
-  <div className="proj-body">
-    <h3>Goal Ledger</h3>
+                  <span className="proj-date">{proj.date}</span>
+                </div>
 
-    <p>
-      Daily goal tracker with authentication, REST APIs,
-      and PWA support.
-      <br />
-      <a href="https://github.com/your-repo" target="_blank">
-        View GitHub →
-      </a>
-    </p>
+                <ul>
+                  {proj.points.map((p, idx) => (
+                    <li key={idx}>{p}</li>
+                  ))}
+                </ul>
 
-    <div className="proj-techs">
-      <span>React</span>
-      <span>Firebase</span>
-      <span>Tailwind</span>
-    </div>
-  </div>
-</div>
+                <a
+                  href={proj.github}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="proj-github"
+                >
+                  View GitHub →
+                </a>
 
-          {/* CARD 2 */}
-          <div className="proj-card reveal">
-  <div className="proj-banner pb1">
-
-    {/* 🟢 LIVE BADGE */}
-    <div className="proj-live">
-      <span className="live-dot"></span> LIVE
-    </div>
-
-    {/* 📸 IMAGE (replace later) */}
-    <img src="/images/goal-ledger.png" alt="Goal Ledger" />
-  </div>
-
-  <div className="proj-body">
-    <h3>Goal Ledger</h3>
-
-    <p>
-      Daily goal tracker with authentication, REST APIs,
-      and PWA support.
-      <br />
-      <a href="https://github.com/your-repo" target="_blank">
-        View GitHub →
-      </a>
-    </p>
-
-    <div className="proj-techs">
-      <span>React</span>
-      <span>Firebase</span>
-      <span>Tailwind</span>
-    </div>
-  </div>
-</div>
-
-          {/* CARD 3 */}
-          <div className="proj-card reveal">
-  <div className="proj-banner pb1">
-
-    {/* 🟢 LIVE BADGE */}
-    <div className="proj-live">
-      <span className="live-dot"></span> LIVE
-    </div>
-
-    {/* 📸 IMAGE (replace later) */}
-    <img src="/images/goal-ledger.png" alt="Goal Ledger" />
-  </div>
-
-  <div className="proj-body">
-    <h3>Goal Ledger</h3>
-
-    <p>
-      Daily goal tracker with authentication, REST APIs,
-      and PWA support.
-      <br />
-      <a href="https://github.com/your-repo" target="_blank">
-        View GitHub →
-      </a>
-    </p>
-
-    <div className="proj-techs">
-      <span>React</span>
-      <span>Firebase</span>
-      <span>Tailwind</span>
-    </div>
-  </div>
-</div>
-
+              </div>
+            </div>
+          ))}
         </div>
+
       </div>
     </section>
   );
