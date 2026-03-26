@@ -71,7 +71,7 @@ export default function Navbar() {
     href="#contact"
     className={active === "contact" ? "btn-mag btn-p active" : "btn-mag btn-p"}
   >
-    Hire Me
+   Download CV
   </a>
     </nav>
   );

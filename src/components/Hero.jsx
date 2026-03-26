@@ -90,7 +90,9 @@ useEffect(() => {
             <div className="av-ring"></div>
             <div className="av-ring2"></div>
 
-            <div className="av-core">PS</div>
+            <div className="av-core">
+              <img src="/photo.png" alt="Prabhu singh"/>
+            </div>
 
             <div className="ob ob1">⚡ DSA Expert</div>
             <div className="ob ob2">🚀 Full Stack</div>
