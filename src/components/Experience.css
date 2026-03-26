@@ -1,0 +1,46 @@
+#experience {
+  padding: 6rem 3.5rem;
+}
+
+.sec-tag {
+  color: var(--c);
+  font-size: 0.8rem;
+}
+
+.sec-title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin: 1rem 0 3rem;
+}
+
+.sec-title span {
+  background: linear-gradient(135deg, var(--p), var(--c));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.exp-card {
+  display: flex;
+  gap: 1.5rem;
+  padding: 2rem;
+  border-radius: 20px;
+
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(124,92,252,.2);
+}
+
+.exp-left {
+  font-size: 2rem;
+}
+
+.exp-meta {
+  color: var(--p);
+  font-size: 0.85rem;
+}
+
+.exp-tags span {
+  margin-right: 8px;
+  padding: 4px 10px;
+  border-radius: 50px;
+  border: 1px solid rgba(124,92,252,.3);
+}

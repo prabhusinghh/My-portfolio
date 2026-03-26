@@ -1,0 +1,144 @@
+#contact {
+  padding: 6rem 3.5rem;
+}
+
+/* GRID */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+/* LEFT */
+.contact-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.contact-title span {
+  background: linear-gradient(135deg, var(--p), var(--c));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.contact-sub {
+  margin: 1.5rem 0;
+  color: rgba(200,190,255,.6);
+  line-height: 1.7;
+}
+
+/* availability */
+.contact-availability {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  margin-bottom: 1.5rem;
+  padding: 0.5rem 1rem;
+
+  border-radius: 50px;
+
+  background: rgba(45,212,191,.1);
+  color: #5eead4;
+
+  font-size: 0.8rem;
+  font-weight: 600;
+
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* pulse dot */
+.contact-availability::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #2dd4bf;
+
+  animation: pulse 1.5s infinite;
+}
+
+/* hover */
+.contact-availability:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(45,212,191,.3);
+}
+
+@keyframes pulse {
+  0%,100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.5); opacity: 0.5; }
+}
+
+/* chips */
+.contact-chips span {
+  margin-right: 10px;
+  padding: 6px 14px;
+  border-radius: 50px;
+  border: 1px solid rgba(124,92,252,.3);
+  font-size: 0.75rem;
+}
+
+/* RIGHT */
+.contact-right {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+/* CARD */
+.contact-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  padding: 1.3rem 1.6rem;
+  border-radius: 16px;
+
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(124,92,252,.2);
+
+  text-decoration: none;
+  color: inherit;
+
+  transition: transform .25s, box-shadow .25s, border .25s;
+}
+
+/* hover */
+.contact-card:hover {
+  transform: translateY(-6px);
+  border: 1px solid rgba(124,92,252,.5);
+
+  box-shadow: 0 20px 50px rgba(0,0,0,.5),
+              0 0 30px rgba(124,92,252,.3);
+}
+.contact-icon {
+  width: 45px;
+  height: 45px;
+  border-radius: 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(135deg, var(--p), var(--c));
+  font-size: 1.2rem;
+}
+
+.contact-card h3 {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.contact-card p {
+  font-size: 0.85rem;
+  color: rgba(200,190,255,.6);
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}

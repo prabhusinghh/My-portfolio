@@ -1,0 +1,70 @@
+/* SECTION */
+#education {
+  padding: 6rem 3.5rem;
+}
+
+/* TIMELINE WRAPPER */
+.edu-list {
+  position: relative;
+  margin-top: 3rem;
+  padding-left: 2rem;
+}
+
+/* vertical line */
+.edu-list::before {
+  content: "";
+  position: absolute;
+  left: 8px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(var(--p), var(--c));
+}
+
+/* ITEM */
+.edu-item {
+  position: relative;
+  margin-bottom: 2.5rem;
+
+  padding: 1.5rem 1.8rem;
+  border-radius: 20px;
+
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(124,92,252,.2);
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* hover */
+.edu-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 50px rgba(0,0,0,.5),
+              0 0 30px rgba(124,92,252,.2);
+}
+
+/* timeline dot */
+.edu-item::before {
+  content: "";
+  position: absolute;
+  left: -1.6rem;
+  top: 20px;
+
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+
+  background: var(--p);
+  box-shadow: 0 0 10px var(--p);
+}
+
+/* TEXT */
+.edu-item h3 {
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.edu-item p {
+  font-size: 0.85rem;
+  color: rgba(200,190,255,.6);
+  margin-top: 6px;
+}

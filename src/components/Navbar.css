@@ -1,0 +1,170 @@
+/* NAVBAR */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 1.2rem 3.5rem;
+
+  background: rgba(8, 0, 21, 0.6);
+  backdrop-filter: blur(20px);
+
+  border-bottom: 1px solid rgba(124,92,252,.1);
+
+  z-index: 500;
+  transition: padding 0.3s ease;
+}
+
+/* shrink on scroll */
+.nav.scrolled {
+  padding: 0.8rem 3.5rem;
+}
+
+/* LOGO */
+.nav-logo {
+  font-family: "Syne", sans-serif;
+  font-weight: 800;
+  font-size: 1.5rem;
+
+  background: linear-gradient(135deg, var(--p), var(--c));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* 🔥 NEW: HAMBURGER BUTTON */
+.menu-btn {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: white;
+}
+
+/* LINKS */
+.nav-links {
+  display: flex;
+  gap: 1.8rem;
+  list-style: none;
+  align-items: center;
+
+  margin-left: auto;
+
+}
+
+/* LINK STYLE */
+.nav-links a {
+  font-size: 0.9rem;
+  color: rgba(200,190,255,.6);
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.2s;
+}
+
+/* underline animation */
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  height: 2px;
+  width: 100%;
+
+  background: linear-gradient(90deg, var(--p), var(--c));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+/* hover */
+.nav-links a:hover {
+  color: white;
+}
+
+.nav-links a:hover::after {
+  transform: scaleX(1);
+}
+
+/* ACTIVE LINK */
+.nav-links a.active {
+  color: white;
+}
+
+.nav-links a.active::after {
+  transform: scaleX(1);
+}
+
+/* 🔥 HIRE BUTTON */
+.hire-btn {
+  padding: 0.6rem 1.5rem;
+  border-radius: 50px;
+
+  background: linear-gradient(135deg, var(--p), var(--c));
+  color: white;
+  font-weight: 700;
+  font-size: 0.85rem;
+
+  text-decoration: none;
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* hover effect */
+.hire-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(124,92,252,.4);
+}
+
+/* 🔥 RESPONSIVE FIX */
+@media (max-width: 768px) {
+
+  .menu-btn {
+    display: block;
+  }
+
+  .nav-links {
+    
+    position: absolute;
+    top: 70px;
+    right: 20px;
+
+    flex-direction: column;
+    gap: 1rem;
+
+    padding: 1rem 1.5rem;
+    border-radius: 16px;
+
+    background: rgba(8, 0, 21, 0.95);
+    border: 1px solid rgba(124,92,252,.2);
+
+    backdrop-filter: blur(20px);
+
+    /* 🔥 animation */
+    opacity: 0;
+    transform: translateY(-10px) scale(0.95);
+    pointer-events: none;
+
+    transition: all 0.25s ease;
+  }
+
+  /* OPEN STATE */
+  .nav-links.open {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+  }
+
+  /* keep hire visible */
+  .hire-btn {
+    display: inline-block;
+  }
+}
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
